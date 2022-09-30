@@ -1,0 +1,11 @@
+FTLCONF_LOCAL_IPV4=*** host ip **
+TZ=** some timezone **
+WEBPASSWORD=** some password **
+REV_SERVER=true
+REV_SERVER_DOMAIN=local
+REV_SERVER_TARGET=** some gateway/router ip **
+REV_SERVER_CIDR=192.168.0.0/16
+HOSTNAME=pihole
+DOMAIN_NAME=pihole.local
+PIHOLE_WEBPORT=** port for webUI **
+WEBTHEME=default-light
