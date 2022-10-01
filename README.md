@@ -2,7 +2,7 @@
 
 This repository provides the basic docker compose artifacts to:
 
-1.  Pull the latest pi-hole image from dockerhub and stand up and environment
+1.  Pull the latest pi-hole + unbound image from dockerhub and stand up and environment.  This uses the cbcrowe/pihole one container image which is based on the official pi-hole image with extra build steps to add in unbound as a recursive DNS server.  More info at https://github.com/chriscrowe/docker-pihole-unbound.
 2.  The docker-compose.yml file contains references to environmental variables. You will need to create your own .env file and populate it with the paramters for your own set up.
 3.  From terminal use the command "sudo docker compose up -d" to pull and start up the pi-hole environment.
 4.  You will need to configure the pi-hole host to use a static IP address.  
