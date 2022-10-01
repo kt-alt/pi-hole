@@ -25,6 +25,7 @@ This will not change the nameserver settings, which point to the stub resolver t
     sudo sh -c 'rm /etc/resolv.conf && ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf' 
     
 After making these changes, you should restart systemd-resolved using 
+    
     systemctl restart systemd-resolved
 
 ### For Raspberry PI
