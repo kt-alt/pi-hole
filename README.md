@@ -36,7 +36,7 @@ Note the raspberry pi OS uses resolvconf.conf to generate resolve.conf - mean yo
 ### For Asus Routers
 (https://www.reddit.com/r/pihole/comments/mduhv3/chicken_and_egg_problem_with_asus_router_wan/)
 
-As of writing, the latest Asus firmware (3.0.0.4.386.49703) only allows you to specify 1 DNS server in the DHCP settings.  By default it will give out it's own IP as the secondary one (and will forward DNS request off to the ISP provided DNS servers).  To prevent this you can either run the Merlinwrt firmware (as it has an option to disable this) or SSH into the router and execute the following commands (where yyy.yyy.yyy.yyy is your secondary pi-hole) (do at your own risk though):
+As of writing, the latest Asus firmware (3.0.0.4.386.49703) only allows you to specify 1 DNS server in the DHCP settings.  By default it will give out it's own IP as the secondary one (and will forward DNS request off to the ISP provided DNS servers).  To prevent this you can either run the Merlinwrt firmware (as it has an option to disable this) or SSH into the router and execute the following commands (where yyy.yyy.yyy.yyy is your secondary pi-hole - BUT do at your own risk though):
 
     nvram set dhcp_dns2_x=yyy.yyy.yyy.yyy | nvram commit
     service restart_dnsmasq
