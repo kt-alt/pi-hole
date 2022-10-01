@@ -24,19 +24,20 @@ This will not change the nameserver settings, which point to the stub resolver t
 
     sudo sh -c 'rm /etc/resolv.conf && ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf' 
     
-After making these changes, you should restart systemd-resolved using systemctl restart systemd-resolved
+After making these changes, you should restart systemd-resolved using 
+    systemctl restart systemd-resolved
 
 ### For Raspberry PI
 (https://www.raspberrypi.com/documentation/computers/configuration.html)
 
 You may get a unable to resolve DNS error when trying to trigger a Gravity update.  To resolve this, the host of the pi-hole image needs to be configured to use "127.0.0.1" as it's primary dns.  If you have 2 pi-hole's, you can configure the other pi-hole as the secondary DNS.  This also ensures that if one pi-hole DNS goes down, it won't leave the other one uanble to resolve DNS's.
 
-Note the raspberry pi OS uses resolvconf.conf to generate resolve.conf - mean you CANNOT directly edit resolv.conf.  Instead you should configure the DNS (and IP) setting with the included utility raspi-config   Note you can add in 2 DNS server IP's with a " " space in between.
+Note the raspberry pi OS uses resolvconf.conf to generate resolve.conf - means you CANNOT directly edit resolv.conf.  Instead you should configure the DNS (and IP) setting with the included utility raspi-config   Note you can add in 2 DNS server IP's with a " " space in between.
 
 ### For Asus Routers
 (https://www.reddit.com/r/pihole/comments/mduhv3/chicken_and_egg_problem_with_asus_router_wan/)
 
-As of writing, the latest Asus firmware (3.0.0.4.386.49703) only allows you to specify 1 DNS server in the DHCP settings.  By default it will give out it's own IP as the secondary one (and will forward DNS request off to the ISP provided DNS servers).  To prevent this you can either run the Merlinwrt firmware (as it has an option to disable this) or SSH into the router and execute the following commands (where yyy.yyy.yyy.yyy is your secondary pi-hole - BUT do at your own risk though):
+As of writing, the latest Asus firmware (3.0.0.4.386.49703) only allows you to specify 1 DNS server in the DHCP settings.  By default it will give out it's own IP as the secondary one (and will forward DNS requests off to the ISP provided DNS servers).  To prevent this you can either run the Merlinwrt firmware (as it has an option to disable this) or SSH into the router and execute the following commands (where yyy.yyy.yyy.yyy is your secondary pi-hole - BUT do at your own risk though):
 
     nvram set dhcp_dns2_x=yyy.yyy.yyy.yyy | nvram commit
     service restart_dnsmasq
