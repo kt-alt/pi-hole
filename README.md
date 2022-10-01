@@ -25,4 +25,6 @@ After making these changes, you should restart systemd-resolved using systemctl 
 
 For Raspberry PI (https://www.reddit.com/r/pihole/comments/mduhv3/chicken_and_egg_problem_with_asus_router_wan/)
 
-    You may get a unable to resolve DNS error when trying to trigger a Gravity update.  To resolve this, the host of the pi-hole image needs to be configured to use "127.0.0.1" as it's primary dns.  If you have 2 pi-hole's, you can configure the other pi-hole as the secondary DNS.  Note the raspberry pi OS uses resolvconf.conf to generate resolve.conf - mean you CANNOT directly edit resolv.conf.  Instead you should configure the DNS (and IP) setting with the included utility raspi-config (https://www.raspberrypi.com/documentation/computers/configuration.html).
+You may get a unable to resolve DNS error when trying to trigger a Gravity update.  To resolve this, the host of the pi-hole image needs to be configured to use "127.0.0.1" as it's primary dns.  If you have 2 pi-hole's, you can configure the other pi-hole as the secondary DNS.  
+
+Note the raspberry pi OS uses resolvconf.conf to generate resolve.conf - mean you CANNOT directly edit resolv.conf.  Instead you should configure the DNS (and IP) setting with the included utility raspi-config (https://www.raspberrypi.com/documentation/computers/configuration.html).
