@@ -1,2 +1,4 @@
 # User-specific files
 .env
+etc_pihole-unbound/
+etc_pihole_dnsmasq-unbound/

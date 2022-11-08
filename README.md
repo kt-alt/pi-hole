@@ -1,4 +1,4 @@
-# Welcome to Pi-hole Git
+# Pi-hole
 
 This repository provides the basic docker compose artifacts to:
 
