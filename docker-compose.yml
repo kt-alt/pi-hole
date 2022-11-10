@@ -1,9 +1,5 @@
 version: '3.0'
 
-volumes:
-  etc_pihole-unbound:
-  etc_pihole_dnsmasq-unbound:
-
 services:
   pihole:
     container_name: pihole
@@ -30,6 +26,6 @@ services:
       - DNSSEC="true"
       - DNSMASQ_LISTENING=single
     volumes:
-      - etc_pihole-unbound:/etc/pihole:rw
-      - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
+      - ./etc_pihole-unbound:/etc/pihole:rw
+      - ./etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
     restart: unless-stopped

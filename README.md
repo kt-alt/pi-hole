@@ -10,6 +10,9 @@ This repository provides the basic docker compose artifacts to:
 6.  To configure individual clients/devices to use pi-hole, add it's IP into their DNS settings.
 7.  To configure pi-hole network wide, you will need to update your router's DHCP settings to use the pi-holes.  Note for Asus routers, this is done through the DHCP settings (which is what the router hands out to client devices) and NOT through the WAN settings (which is what it uses itself).  
 
+### To Deploy a 2nd Pi-hole
+To deploy a another pi-hole to hand out as a secondary DNS, you will need to update the .env file with the particulars of the 2nd pi-hole.  
+
 ## Additional Steps
 
 ### For Ubuntu
@@ -42,4 +45,13 @@ As of writing, the latest Asus firmware (3.0.0.4.386.49703) only allows you to s
 
     nvram set dhcp_dns2_x=yyy.yyy.yyy.yyy | nvram commit
     service restart_dnsmasq
+
+### Domain 
+If you are using a domain name (ie home.arpa), make sure that both pi-hole hosts are properly been configured with the domain name.  
+
+In the case of the raspbian, it was able to get the domain name from the router as long as the network connection was set to static IP and DNS's, but to automatically fill in (from the router) other values (ie the domain).  
+
+In the case of ubuntu, the network connection gui does not have an option to automatically fill in the missing values from the router when using a manual/static connection.  One work around for this is to add in home.arpa into the Domain Search.  This can be done through the Show Apps=>Utilities=>Advanced Network Configuration.
+
+To test if it's properly pointed to the domain, you can run a nslookup from both pi-hole hosts (ie nslookup mywordpress).  They should both be able to resolve the short & full names and always return the full name (mywordpress.home.arpas).
 
