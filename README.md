@@ -47,7 +47,7 @@ As of writing, the latest Asus firmware (3.0.0.4.386.49703) only allows you to s
     service restart_dnsmasq
 
 ### Domain 
-If you are using a domain name (ie home.arpa), make sure that both pi-hole hosts are properly been configured with the domain name.  
+If you are using a domain name (ie home.arpa), make sure that both pi-hole hosts have been properly configured with the domain name.  
 
 In the case of the raspbian, it was able to get the domain name from the router as long as the network connection was set to static IP and DNS's, but to automatically fill in (from the router) other values (ie the domain).  
 
