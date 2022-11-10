@@ -51,7 +51,7 @@ If you are using a domain name (ie home.arpa), make sure that both pi-hole hosts
 
 In the case of the raspbian, it was able to get the domain name from the router as long as the network connection was set to static IP and DNS's, but to automatically fill in (from the router) other values (ie the domain).  
 
-In the case of ubuntu, the network connection gui does not have an option to automatically fill in the missing values from the router when using manual/static connection.  One work around for this is to add in home.arpa into the Domain Search.  This can be done through the Show Apps=>Utilities=>Advanced Network Configuration.
+In the case of ubuntu, the network connection gui does not have an option to automatically fill in the missing values from the router when using a manual/static connection.  One work around for this is to add in home.arpa into the Domain Search.  This can be done through the Show Apps=>Utilities=>Advanced Network Configuration.
 
-To test if it's properly pointed to the domain, you can run a "nslookup mywordpress" from both pi-hole hosts.  They should both be able to resolve the short & full names and always return the full name (mywordpress.home.arpas).
+To test if it's properly pointed to the domain, you can run a nslookup from both pi-hole hosts (ie nslookup mywordpress).  They should both be able to resolve the short & full names and always return the full name (mywordpress.home.arpas).
 
