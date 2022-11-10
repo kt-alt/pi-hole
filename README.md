@@ -55,3 +55,16 @@ In the case of ubuntu, the network connection gui does not have an option to aut
 
 To test if it's properly pointed to the domain, you can run a nslookup from both pi-hole hosts (ie nslookup mywordpress).  They should both be able to resolve the short & full names and always return the full name (mywordpress.home.arpas).
 
+Not tested or covered here, but apparently you are susposed to configure this through netplan.  Here's some tutorials:
+
+https://unix.stackexchange.com/questions/322883/how-to-correctly-set-hostname-and-domain-name
+
+https://www.youtube.com/watch?v=HlOY1ucz_DY
+
+https://www.youtube.com/watch?v=c-s_55T57oc
+
+
+
+
+
+
