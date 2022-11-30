@@ -63,7 +63,9 @@ https://www.youtube.com/watch?v=HlOY1ucz_DY
 
 https://www.youtube.com/watch?v=c-s_55T57oc
 
+### Reducing DNS Packet Size
 
+If you get warnings in the Pi-hole Diagnosis area about "reducing dns packet size...", you can add the 99-edns.conf into the etc_pihole_dnsmasq-unbound project folder (this maps into the /etc/dnsmasq.d folder in the container).  Per https://docs.pi-hole.net/ftldns/dnsmasq_warn/, this will prevent Unbound from even trying larger packet sizes and the recurring warning.
 
 
 
